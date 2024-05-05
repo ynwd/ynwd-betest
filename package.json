@@ -6,7 +6,7 @@
   "private": true,
   "scripts": {
     "start": "node main.js",
-    "test": "jest --config ./test/jest-e2e.json",
+    "test": "jest",
     "dev": "nodemon --experimental-modules main.js"
   },
   "author": "yanu",

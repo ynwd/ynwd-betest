@@ -21,6 +21,7 @@ async function createUser(req, res) {
     };
 
     const data = await createUserService(user);
+    await redisClient.flushAll();
     res.json({ data });
   } catch (error) {
     res.status(500).send({
@@ -76,6 +77,7 @@ async function updateUser(req, res) {
     };
 
     const data = await updateUserService(user.Id, user);
+    await redisClient.flushAll();
     return res.send({ data });
   } catch (error) {
     res.status(500).send({
@@ -88,6 +90,7 @@ async function updateUser(req, res) {
 async function deleteUser(req, res) {
   try {
     const data = await deleteUserService(req.params.id);
+    await redisClient.flushAll();
     res.send({ data });
   } catch (error) {
     res.status(500).send({

@@ -11,8 +11,5 @@ const app = express();
 app.use(bodyParser.json());
 app.use(userRouter);
 app.use(jwtRouter);
-app.closeServer = () => {
-  server.close();
-};
 
 module.exports = { app };

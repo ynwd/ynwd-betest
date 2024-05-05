@@ -44,20 +44,16 @@ async function getUser(req, res) {
     }
 
     if (req.query.accountNumber) {
-      console.log("MASUK========0");
       const data = await getUserByAccountNumberService(req.query.accountNumber);
       return send(req, res, data);
     }
 
-    console.log("req.query===>", req.query);
     if (req.query.identityNumber) {
-      console.log("MASUK========1");
       const data = await getUserByIdentityNumberService(
         req.query.identityNumber
       );
       return send(req, res, data);
     }
-    console.log("MASUK========2");
 
     const data = await getUserService();
     return send(req, res, data);

@@ -15,6 +15,7 @@ const userSchema = new m.Schema({
     type: String,
     required: true,
     unique: true,
+    index: true,
   },
   emailAddress: {
     type: String,
@@ -25,6 +26,7 @@ const userSchema = new m.Schema({
     type: String,
     required: true,
     unique: true,
+    index: true,
   },
 });
 
